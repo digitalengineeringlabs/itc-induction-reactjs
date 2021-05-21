@@ -3,6 +3,8 @@ import './App.css';
 import User from './User';
 import Post from './Post';
 import Books from './Books';
+import HttpExample from './HttpExample';
+import { useState } from 'react';
 
 function App() {
 
@@ -20,9 +22,11 @@ function App() {
 //new array with transformed
   return (
     <div className="App">
+      
       {/* { userComponents } */}
       {/* <Post></Post> */}
       <Books></Books>
+      {/* <HttpExample></HttpExample> */}
     </div>
   );
 }
