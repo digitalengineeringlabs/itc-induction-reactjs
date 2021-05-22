@@ -59,7 +59,7 @@ const Books = () => {
                 return <Book key={book.id} book={book}
                     onRemove={()=>{removeBookHandler(book.id)}}
                     onEdit={editBookHandler}
-                    ></Book>
+                    >Book</Book>
             })
         }
     </div>);
