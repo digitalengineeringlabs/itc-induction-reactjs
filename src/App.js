@@ -1,11 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
-import User from './User';
-import Users from './Users';
-import Post from './Post';
-import Books from './class-components/Books';
-import HttpExample from './HttpExample';
-import { useState } from 'react';
+import User from './users/User';
+import HomeCls from './books/HomeCls';
+
 
 function App() {
 
@@ -26,7 +22,7 @@ function App() {
       
       {/* { userComponents } */}
       {/* <Post></Post> */}
-      <Books></Books>
+      <HomeCls></HomeCls>
       {/* <Users></Users> */}
       {/* <HttpExample></HttpExample> */}
     </div>

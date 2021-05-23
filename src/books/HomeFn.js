@@ -1,8 +1,8 @@
 import {useEffect, useState} from 'react'
 import axios from 'axios'
-import Book from './Book'
+import Info from './Info'
 
-const Books = () => {
+const HomeFn = () => {
 
     const [books,setBooks] = useState([])
     const [title,setTitle] = useState('')
@@ -65,5 +65,5 @@ const Books = () => {
     </div>);
 }
 
-export default Books;
+export default HomeFn;
 
