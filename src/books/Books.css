@@ -1,0 +1,12 @@
+.common {
+    border:3px dashed red;
+    padding:20px;
+}
+
+.light {
+    background-color: #ddd
+}
+
+.highlight {
+    background-color: #da3
+}

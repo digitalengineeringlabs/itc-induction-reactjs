@@ -4,6 +4,10 @@ import Info from './Info'
 import Add from './Add'
 import Edit from './Edit'
 
+import {CurrUserContext} from '../App'
+
+import './Books.css'
+
 export default class HomeCls extends Component {
 
     state = {
@@ -11,7 +15,8 @@ export default class HomeCls extends Component {
         filter: {
             category: ''
         },
-        refresh: false
+        refresh: false,
+        highlight: false
     }
 
     fetchBooks = () => {
@@ -25,7 +30,7 @@ export default class HomeCls extends Component {
             this.setState({books});
         })
     }
-
+    
     componentDidMount(){
         this.fetchBooks()
     }
@@ -68,9 +73,12 @@ export default class HomeCls extends Component {
     }
 
     render () {
-        return (<div style={{border:'3px dashed #999',padding:'20px'}}>
+        return (
+                <div className={`common ${this.state.highlight ? 'highlight' : 'light'}`}>
+            <button onClick={()=>this.setState({highlight:!this.state.highlight})}>change color</button>
             <Add onAdd={this.addBookHandler}></Add>
             <div>
+
             <select id="category" value={this.state.filter.category} 
                 onChange={(e)=>this.filterBookHandler({category:e.target.value})}>
                     <option value="">Show All</option>
@@ -89,7 +97,7 @@ export default class HomeCls extends Component {
                     >Book</Info>)
             })
         }
-    </div>);
+    </div>) 
     }
 }
 

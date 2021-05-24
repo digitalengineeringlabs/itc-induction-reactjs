@@ -1,14 +1,19 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Add = (props) => {
 
     const [book,setBook] = useState({title:'',category:'',pDate:'',price:0});
+    const ref = React.createRef();
+
+    useEffect(()=>{
+        ref.current.focus()
+    },[])
 
     return (<div style={{border:'2px dashed #999',padding:'20px'}}>
         <ul className='form'>
         <li>
             <label htmlFor="title">Title</label>
-            <input id="title" type="text" value={book.title} onChange={(e)=>setBook({...book,title:e.target.value})}></input>
+            <input id="title" ref={ref} type="text" value={book.title} onChange={(e)=>setBook({...book,title:e.target.value})}></input>
         </li>
         <li>
             <label htmlFor="category">Category</label>
