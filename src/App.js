@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import './App.css';
 import User from './users/User';
 import HomeCls from './books/HomeCls';
+import ActualFnComp from './hoc/ActualFnComp';
+import ActualClsComp from './hoc/ActualClsComp';
+import withHoc from './hoc/withHoc';
 
 export const ThemeContext = React.createContext('light');
 
@@ -26,7 +29,10 @@ function App() {
       <ThemeContext.Provider value="dark">
       {/* { userComponents } */}
       {/* <Post></Post> */}
-      <HomeCls></HomeCls>
+      {/* <HomeCls></HomeCls> */}
+      {/* <ActualComponent></ActualComponent> */}
+      <ActualFnComp title={'John'}></ActualFnComp>
+      <ActualClsComp title={'Peter'}></ActualClsComp>
       {/* <Users></Users> */}
       {/* <HttpExample></HttpExample> */}
       </ThemeContext.Provider>
