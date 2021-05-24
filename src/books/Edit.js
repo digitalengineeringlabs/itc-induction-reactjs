@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import {ThemeContext} from '../App'
 
 const Edit = (props) => {
+    
+    const value = useContext(ThemeContext);
 
     const [book,setBook] = useState({
         _id:props.book._id,
@@ -9,7 +12,7 @@ const Edit = (props) => {
         pDate:props.book.pDate,
         price:props.book.price});
 
-    return (<div style={{border:'2px dashed #999',padding:'20px'}}>
+    return (<div className={value}>
         <ul className='form'>
         <li>
             <label htmlFor="title">Title</label>

@@ -1,7 +1,7 @@
-import {useState} from 'react'
+import './Books.css'
 
 const Book = (props) => {
-    return (<div className='info'>
+    return (<div className={`book-view ${props.book.price < 100 && 'cheap'}`}>
         <div>
             <h3>{props.book.title}</h3>
             <ul>

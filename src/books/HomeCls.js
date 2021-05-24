@@ -3,9 +3,10 @@ import axios from 'axios'
 import Info from './Info' 
 import Add from './Add'
 import Edit from './Edit'
+import {ThemeContext} from '../App'
 
 export default class HomeCls extends Component {
-
+    
     state = {
         books: [],
         filter: {
@@ -66,9 +67,19 @@ export default class HomeCls extends Component {
         }) 
         this.setState({books:altered});
     }
-
+    highlight = false
+    
     render () {
-        return (<div style={{border:'3px dashed #999',padding:'20px'}}>
+        const styleProps = {
+            border:'3px dashed #999',
+            padding:'20px',
+            textAlign:'left',
+            backgroundColor: this.highlight ? '#ddd' : '#fff'
+        }
+        
+        return (<ThemeContext.Consumer>
+            {value => (<div style={styleProps}>
+            {value}
             <Add onAdd={this.addBookHandler}></Add>
             <div>
             <select id="category" value={this.state.filter.category} 
@@ -89,7 +100,6 @@ export default class HomeCls extends Component {
                     >Book</Info>)
             })
         }
-    </div>);
+    </div>)}</ThemeContext.Consumer>);
     }
 }
-

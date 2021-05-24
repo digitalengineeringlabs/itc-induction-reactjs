@@ -1,9 +1,13 @@
+import React, { useState } from 'react'
 import './App.css';
 import User from './users/User';
 import HomeCls from './books/HomeCls';
 
+export const ThemeContext = React.createContext('light');
 
 function App() {
+
+  const [theme,setTheme] = useState('dark')
 
   const users = [
     {id:1, name:'John 1',address:'Chvago 1',zip:4555},
@@ -19,12 +23,13 @@ function App() {
 //new array with transformed
   return (
     <div className="App">
-      
+      <ThemeContext.Provider value="dark">
       {/* { userComponents } */}
       {/* <Post></Post> */}
       <HomeCls></HomeCls>
       {/* <Users></Users> */}
       {/* <HttpExample></HttpExample> */}
+      </ThemeContext.Provider>
     </div>
   );
 }
